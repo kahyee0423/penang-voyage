@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Layout Styles */
+:root{
+    background-color: #FFFCFC;
+    min-height: 90vh;
+}
+
+section {
+    padding: 5rem 3rem; /* Default padding for larger screens */
+    margin: auto;  
+    max-width: 1200px; 
+  }
+
+
+/* Responsive Padding */
+@media (max-width: 1024px) {
+section {
+    padding: 3.5rem 2.25rem; /* Matches max-lg:px-9 */
+  }
+}
+
+@media (max-width: 768px) {
+section{
+    padding: 3.5rem 2rem; /* Matches max-md:px-8 */
+  }
+}
+
+@media (max-width: 640px) {
+section{
+    padding: 3.5rem 1.5rem; /* Matches max-sm:px-6 */
+  }
+}
+/* Falling animation for bubbles */
+@keyframes fallBubble {
+  0% {
+    transform: translateY(-10%); /* Start above the viewport */
+  }
+  100% {
+    transform: translateY(110%); /* Move beyond the bottom of the viewport */
+  }
+}
+
+/* Bubble container to cover the entire page */
+.bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none; /* Prevent interaction with bubbles */
+}
